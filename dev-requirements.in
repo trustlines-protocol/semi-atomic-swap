@@ -1,0 +1,11 @@
+flake8
+mypy
+setuptools_scm
+pip-tools
+wheel
+setuptools
+black
+pre-commit
+tox
+pytest
+contract-deploy-tools

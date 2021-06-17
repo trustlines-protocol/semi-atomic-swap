@@ -1,0 +1,1052 @@
+{
+    "CurrencyNetworkBasic": {
+        "abi": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "internalType": "address",
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "_value",
+                        "type": "uint256"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bytes",
+                        "name": "_extraData",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "Transfer",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint64",
+                        "name": "_value",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "_maxFee",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "address[]",
+                        "name": "_path",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "_extraData",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "transferFrom",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {
+                "transferFrom(uint64,uint64,address[],bytes)": {
+                    "params": {
+                        "_extraData": "extra data bytes to be logged in the Transfer event*",
+                        "_maxFee": "Maximum fee the sender wants to pay",
+                        "_path": "Path of transfer starting with sender and ending with receiver",
+                        "_value": "The amount of token to be transferred"
+                    }
+                }
+            },
+            "title": "Basic functionalities of Currency Networks",
+            "version": 1
+        },
+        "bytecode": "0x608060405234801561001057600080fd5b506102f6806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b61f303514610030575b600080fd5b61004361003e3660046101a1565b610045565b005b838361005260018261029d565b81811061006f57634e487b7160e01b600052603260045260246000fd5b90506020020160208101906100849190610173565b6001600160a01b0316848460008181106100ae57634e487b7160e01b600052603260045260246000fd5b90506020020160208101906100c39190610173565b6001600160a01b03167fe19260aff97b920c7df27010903aeb9c8d2be5d310a2c67824cf3f15396e4c168885856040516100ff9392919061025d565b60405180910390a3505050505050565b60008083601f840112610120578182fd5b50813567ffffffffffffffff811115610137578182fd5b60208301915083602082850101111561014f57600080fd5b9250929050565b803567ffffffffffffffff8116811461016e57600080fd5b919050565b600060208284031215610184578081fd5b81356001600160a01b038116811461019a578182fd5b9392505050565b600080600080600080608087890312156101b9578182fd5b6101c287610156565b95506101d060208801610156565b9450604087013567ffffffffffffffff808211156101ec578384fd5b818901915089601f8301126101ff578384fd5b81358181111561020d578485fd5b8a60208260051b8501011115610221578485fd5b60208301965080955050606089013591508082111561023e578384fd5b5061024b89828a0161010f565b979a9699509497509295939492505050565b600067ffffffffffffffff851682526040602083015282604083015282846060840137818301606090810191909152601f909201601f1916010192915050565b6000828210156102bb57634e487b7160e01b81526011600452602481fd5b50039056fea2646970667358221220ed232bfc5fc1af3a92491bfd12a14cff9f1bb33a932c6f57d9462b4d392590e064736f6c63430008030033",
+        "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b61f303514610030575b600080fd5b61004361003e3660046101a1565b610045565b005b838361005260018261029d565b81811061006f57634e487b7160e01b600052603260045260246000fd5b90506020020160208101906100849190610173565b6001600160a01b0316848460008181106100ae57634e487b7160e01b600052603260045260246000fd5b90506020020160208101906100c39190610173565b6001600160a01b03167fe19260aff97b920c7df27010903aeb9c8d2be5d310a2c67824cf3f15396e4c168885856040516100ff9392919061025d565b60405180910390a3505050505050565b60008083601f840112610120578182fd5b50813567ffffffffffffffff811115610137578182fd5b60208301915083602082850101111561014f57600080fd5b9250929050565b803567ffffffffffffffff8116811461016e57600080fd5b919050565b600060208284031215610184578081fd5b81356001600160a01b038116811461019a578182fd5b9392505050565b600080600080600080608087890312156101b9578182fd5b6101c287610156565b95506101d060208801610156565b9450604087013567ffffffffffffffff808211156101ec578384fd5b818901915089601f8301126101ff578384fd5b81358181111561020d578485fd5b8a60208260051b8501011115610221578485fd5b60208301965080955050606089013591508082111561023e578384fd5b5061024b89828a0161010f565b979a9699509497509295939492505050565b600067ffffffffffffffff851682526040602083015282604083015282846060840137818301606090810191909152601f909201601f1916010192915050565b6000828210156102bb57634e487b7160e01b81526011600452602481fd5b50039056fea2646970667358221220ed232bfc5fc1af3a92491bfd12a14cff9f1bb33a932c6f57d9462b4d392590e064736f6c63430008030033",
+        "metadata": {
+            "compiler": {
+                "version": "0.8.3+commit.8d00100c"
+            },
+            "language": "Solidity",
+            "output": {
+                "abi": [
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "_from",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "_to",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "_value",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "bytes",
+                                "name": "_extraData",
+                                "type": "bytes"
+                            }
+                        ],
+                        "name": "Transfer",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint64",
+                                "name": "_value",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "_maxFee",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "address[]",
+                                "name": "_path",
+                                "type": "address[]"
+                            },
+                            {
+                                "internalType": "bytes",
+                                "name": "_extraData",
+                                "type": "bytes"
+                            }
+                        ],
+                        "name": "transferFrom",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ],
+                "devdoc": {
+                    "kind": "dev",
+                    "methods": {
+                        "transferFrom(uint64,uint64,address[],bytes)": {
+                            "params": {
+                                "_extraData": "extra data bytes to be logged in the Transfer event*",
+                                "_maxFee": "Maximum fee the sender wants to pay",
+                                "_path": "Path of transfer starting with sender and ending with receiver",
+                                "_value": "The amount of token to be transferred"
+                            }
+                        }
+                    },
+                    "title": "Basic functionalities of Currency Networks",
+                    "version": 1
+                },
+                "userdoc": {
+                    "kind": "user",
+                    "methods": {
+                        "transferFrom(uint64,uint64,address[],bytes)": {
+                            "notice": "send `_value` along `_path` msg.sender needs to be authorized to call this function"
+                        }
+                    },
+                    "notice": "Main contract of Trustlines, encapsulates all trustlines of one currency network. Implements core features of currency networks related to opening / closing trustline and transfers. Also includes freezing of TL / currency networks, interests and fees.*",
+                    "version": 1
+                }
+            },
+            "settings": {
+                "compilationTarget": {
+                    "../semi-atomic-swap/src/contracts/CurrencyNetworkBasic.sol": "CurrencyNetworkBasic"
+                },
+                "evmVersion": "petersburg",
+                "libraries": {},
+                "metadata": {
+                    "bytecodeHash": "ipfs"
+                },
+                "optimizer": {
+                    "enabled": true,
+                    "runs": 500
+                },
+                "remappings": []
+            },
+            "sources": {
+                "../semi-atomic-swap/src/contracts/CurrencyNetworkBasic.sol": {
+                    "keccak256": "0x8d3da22c8fa18619eecd166d2c5741f1d262eef621187a12cc86efc02d7f663e",
+                    "license": "MIT",
+                    "urls": [
+                        "bzz-raw://34c713dd6d34efa5330b546413d95ff66647bcd4607ab59938646fe823fa3e0d",
+                        "dweb:/ipfs/QmbfhFHoLewFTtnfqMrF36ssYDzDB41UFC2wT28ksNKSgt"
+                    ]
+                }
+            },
+            "version": 1
+        },
+        "userdoc": {
+            "kind": "user",
+            "methods": {
+                "transferFrom(uint64,uint64,address[],bytes)": {
+                    "notice": "send `_value` along `_path` msg.sender needs to be authorized to call this function"
+                }
+            },
+            "notice": "Main contract of Trustlines, encapsulates all trustlines of one currency network. Implements core features of currency networks related to opening / closing trustline and transfers. Also includes freezing of TL / currency networks, interests and fees.*",
+            "version": 1
+        }
+    },
+    "EtherSwap": {
+        "abi": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "SwapExpiredEvent",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "SwapInitiatedEvent",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "SwapSuccessEvent",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "bytes",
+                        "name": "enc",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "test",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint64",
+                        "name": "_lockTimeSec",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "_hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "_recipient",
+                        "type": "address"
+                    }
+                ],
+                "name": "secretLock",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "_proof",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "secretProof",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "swapExpiredRefund",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "swapMap",
+                "outputs": [
+                    {
+                        "internalType": "address payable",
+                        "name": "initiator",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "endTimeStamp",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "bytecode": "0x608060405234801561001057600080fd5b5061069e806100206000396000f3fe60806040526004361061003f5760003560e01c80633ff3ac5614610044578063506bc938146100665780638ace4acc146100ff57806398e60c0b14610112575b600080fd5b34801561005057600080fd5b5061006461005f3660046105d4565b610132565b005b34801561007257600080fd5b506100c06100813660046105d4565b6000602081905290815260409020805460018201546002909201546001600160a01b0380831693600160a01b90930467ffffffffffffffff1692169084565b604080516001600160a01b03958616815267ffffffffffffffff9490941660208501529190931690820152606081019190915260800160405180910390f35b61006461010d3660046105ec565b6102db565b34801561011e57600080fd5b5061006461012d3660046105d4565b610471565b60008160405160200161014791815260200190565b60408051601f1981840301815291815281516020928301206000818152928390529120549091506001600160a01b03166101b95760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064015b60405180910390fd5b60008181526020819052604090205442600160a01b90910467ffffffffffffffff16101561021f5760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101b0565b600081815260208190526040812060028101805460018301805484546001600160a01b031982169092556001600160e01b03199091169093559290556001600160a01b03166040516001600160a01b0382169083156108fc029084906000818181858888f1935050505015801561029a573d6000803e3d6000fd5b50827f440bc00f67093c1be9ead3b5ead1a5299a443288ea94ca2a10f622dd3ca40239836040516102cd91815260200190565b60405180910390a250505050565b6000828152602081905260409020546001600160a01b0316156103405760405162461bcd60e51b815260206004820152601460248201527f456e74727920616c72656164792065786973747300000000000000000000000060448201526064016101b0565b600034116103905760405162461bcd60e51b815260206004820152601160248201527f457468657220697320726571756972656400000000000000000000000000000060448201526064016101b0565b60008281526020819052604090208054336001600160a01b0319918216178255600190910180549091166001600160a01b0383161790556103db67ffffffffffffffff841642610644565b60008381526020819052604090819020805467ffffffffffffffff93909316600160a01b027fffffffff0000000000000000ffffffffffffffffffffffffffffffffffffffff9093169290921782553460029092018290555183917ff86717ed05acf346de30e6a9530a84adfd4a9f28bdc33f3807046497388e8d0a9161046491815260200190565b60405180910390a2505050565b6000818152602081905260409020546001600160a01b03166104c65760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101b0565b60008181526020819052604090205442600160a01b90910467ffffffffffffffff161061052b5760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101b0565b600081815260208190526040812060028101805482546001840180546001600160a01b03191690556001600160e01b031981169093559290556001600160a01b03166040516001600160a01b0382169083156108fc029084906000818181858888f193505050501580156105a3573d6000803e3d6000fd5b5060405183907f54c07e2dfbbda2101dac935cfd86c2623a30276f80b95599b27879996a4ef97d90600090a2505050565b6000602082840312156105e5578081fd5b5035919050565b600080600060608486031215610600578182fd5b833567ffffffffffffffff81168114610617578283fd5b92506020840135915060408401356001600160a01b0381168114610639578182fd5b809150509250925092565b6000821982111561066357634e487b7160e01b81526011600452602481fd5b50019056fea2646970667358221220d6e850b3c66ebb5133d1082e7cb0fab3055536b21a2a9f77da10895dd536d7a464736f6c63430008030033",
+        "deployedBytecode": "0x60806040526004361061003f5760003560e01c80633ff3ac5614610044578063506bc938146100665780638ace4acc146100ff57806398e60c0b14610112575b600080fd5b34801561005057600080fd5b5061006461005f3660046105d4565b610132565b005b34801561007257600080fd5b506100c06100813660046105d4565b6000602081905290815260409020805460018201546002909201546001600160a01b0380831693600160a01b90930467ffffffffffffffff1692169084565b604080516001600160a01b03958616815267ffffffffffffffff9490941660208501529190931690820152606081019190915260800160405180910390f35b61006461010d3660046105ec565b6102db565b34801561011e57600080fd5b5061006461012d3660046105d4565b610471565b60008160405160200161014791815260200190565b60408051601f1981840301815291815281516020928301206000818152928390529120549091506001600160a01b03166101b95760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064015b60405180910390fd5b60008181526020819052604090205442600160a01b90910467ffffffffffffffff16101561021f5760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101b0565b600081815260208190526040812060028101805460018301805484546001600160a01b031982169092556001600160e01b03199091169093559290556001600160a01b03166040516001600160a01b0382169083156108fc029084906000818181858888f1935050505015801561029a573d6000803e3d6000fd5b50827f440bc00f67093c1be9ead3b5ead1a5299a443288ea94ca2a10f622dd3ca40239836040516102cd91815260200190565b60405180910390a250505050565b6000828152602081905260409020546001600160a01b0316156103405760405162461bcd60e51b815260206004820152601460248201527f456e74727920616c72656164792065786973747300000000000000000000000060448201526064016101b0565b600034116103905760405162461bcd60e51b815260206004820152601160248201527f457468657220697320726571756972656400000000000000000000000000000060448201526064016101b0565b60008281526020819052604090208054336001600160a01b0319918216178255600190910180549091166001600160a01b0383161790556103db67ffffffffffffffff841642610644565b60008381526020819052604090819020805467ffffffffffffffff93909316600160a01b027fffffffff0000000000000000ffffffffffffffffffffffffffffffffffffffff9093169290921782553460029092018290555183917ff86717ed05acf346de30e6a9530a84adfd4a9f28bdc33f3807046497388e8d0a9161046491815260200190565b60405180910390a2505050565b6000818152602081905260409020546001600160a01b03166104c65760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101b0565b60008181526020819052604090205442600160a01b90910467ffffffffffffffff161061052b5760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101b0565b600081815260208190526040812060028101805482546001840180546001600160a01b03191690556001600160e01b031981169093559290556001600160a01b03166040516001600160a01b0382169083156108fc029084906000818181858888f193505050501580156105a3573d6000803e3d6000fd5b5060405183907f54c07e2dfbbda2101dac935cfd86c2623a30276f80b95599b27879996a4ef97d90600090a2505050565b6000602082840312156105e5578081fd5b5035919050565b600080600060608486031215610600578182fd5b833567ffffffffffffffff81168114610617578283fd5b92506020840135915060408401356001600160a01b0381168114610639578182fd5b809150509250925092565b6000821982111561066357634e487b7160e01b81526011600452602481fd5b50019056fea2646970667358221220d6e850b3c66ebb5133d1082e7cb0fab3055536b21a2a9f77da10895dd536d7a464736f6c63430008030033",
+        "metadata": {
+            "compiler": {
+                "version": "0.8.3+commit.8d00100c"
+            },
+            "language": "Solidity",
+            "output": {
+                "abi": [
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "SwapExpiredEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "SwapInitiatedEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "SwapSuccessEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "bytes",
+                                "name": "enc",
+                                "type": "bytes"
+                            }
+                        ],
+                        "name": "test",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint64",
+                                "name": "_lockTimeSec",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "bytes32",
+                                "name": "_hash",
+                                "type": "bytes32"
+                            },
+                            {
+                                "internalType": "address payable",
+                                "name": "_recipient",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "secretLock",
+                        "outputs": [],
+                        "stateMutability": "payable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "_proof",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "secretProof",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "_hash",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "swapExpiredRefund",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "swapMap",
+                        "outputs": [
+                            {
+                                "internalType": "address payable",
+                                "name": "initiator",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "endTimeStamp",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "address payable",
+                                "name": "recipient",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "value",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    }
+                ],
+                "devdoc": {
+                    "kind": "dev",
+                    "methods": {},
+                    "version": 1
+                },
+                "userdoc": {
+                    "kind": "user",
+                    "methods": {},
+                    "version": 1
+                }
+            },
+            "settings": {
+                "compilationTarget": {
+                    "../semi-atomic-swap/src/contracts/EtherSwap.sol": "EtherSwap"
+                },
+                "evmVersion": "petersburg",
+                "libraries": {},
+                "metadata": {
+                    "bytecodeHash": "ipfs"
+                },
+                "optimizer": {
+                    "enabled": true,
+                    "runs": 500
+                },
+                "remappings": []
+            },
+            "sources": {
+                "../semi-atomic-swap/src/contracts/EtherSwap.sol": {
+                    "keccak256": "0x49a69cf4412c30118c4f4798a8c3be92583753d2400ca8a6129116e24205d0b6",
+                    "license": "MIT",
+                    "urls": [
+                        "bzz-raw://504e4789b21846eb59fc8b26ef7eb06660b47c65105b03c847f785939dc2a245",
+                        "dweb:/ipfs/QmaW3MwwHrvPuRQz8FXhmrhoco5MY6YhwTR3FjRcPAbsQa"
+                    ]
+                }
+            },
+            "version": 1
+        },
+        "userdoc": {
+            "kind": "user",
+            "methods": {},
+            "version": 1
+        }
+    },
+    "TLSwap": {
+        "abi": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "CommitmentExpiredEvent",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "TLMoneyAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "CommitmentInitiatedEvent",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": true,
+                        "internalType": "bytes32",
+                        "name": "hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "TLMoneyAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "TLNetwork",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "initiatorEthAddress",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "uint256",
+                        "name": "EthAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "CommitmentSuccessEvent",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "CommitmentsMap",
+                "outputs": [
+                    {
+                        "internalType": "address payable",
+                        "name": "initiator",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "endTimeStamp",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "TLMoneyAmount",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "TLNetwork",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "initiatorEthAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "EthAmount",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address[]",
+                        "name": "_path",
+                        "type": "address[]"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "_maxFee",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "_extraData",
+                        "type": "bytes"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "_proof",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "claim",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address payable",
+                        "name": "_TLSender",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address payable",
+                        "name": "_TLRecipient",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_TLNetwork",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "_TLMoneyAmount",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_InitiatorEthAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_EthAmount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "_lockTimeSec",
+                        "type": "uint64"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "commit",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "removeCommitment",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "bytecode": "0x608060405234801561001057600080fd5b506109e5806100206000396000f3fe60806040526004361061003f5760003560e01c80634b6286c914610044578063619b00d414610059578063ad121c4e14610079578063d6a1c7f814610142575b600080fd5b610057610052366004610783565b610162565b005b34801561006557600080fd5b50610057610074366004610813565b610404565b34801561008557600080fd5b506100ef6100943660046108c7565b6001602081905260009182526040909120805491810154600282015460038301546004909301546001600160a01b038086169567ffffffffffffffff600160a01b918290048116968684169692909204169382169291169087565b604080516001600160a01b03988916815267ffffffffffffffff978816602082015295881690860152949092166060840152841660808301529290921660a083015260c082015260e00160405180910390f35b34801561014e57600080fd5b5061005761015d3660046108c7565b6105e7565b6000818152600160205260409020546001600160a01b0316156101cc5760405162461bcd60e51b815260206004820152601460248201527f456e74727920616c72656164792065786973747300000000000000000000000060448201526064015b60405180910390fd5b60008567ffffffffffffffff16116102305760405162461bcd60e51b815260206004820152602160248201527f544c20746f74616c206d6f6e657920616d6f756e7420697320726571756972656044820152601960fa1b60648201526084016101c3565b6001600160a01b0384166102865760405162461bcd60e51b815260206004820152601c60248201527f457468657265756d20616464726573732069732072657175697265640000000060448201526064016101c3565b600083116102d65760405162461bcd60e51b815260206004820152601c60248201527f45746820746f74616c20616d6f756e742069732072657175697265640000000060448201526064016101c3565b600081815260016020819052604090912080546001600160a01b03808c166001600160a01b0319928316178355919092018054918a169190921617905561032767ffffffffffffffff831642610973565b600082815260016020818152604092839020805467ffffffffffffffff958616600160a01b9081027fffffffff0000000000000000ffffffffffffffffffffffffffffffffffffffff9283161783559382018054968c1694850296909116959095179094556002840180546001600160a01b038c81166001600160a01b031992831617909255600386018054928b16929091169190911790556004909301869055905190815282917f634761f946731c268edfbeb92252994b8c9412316195d68196a56fea6f5e04d2910160405180910390a25050505050505050565b60008160405160200161041991815260200190565b60408051808303601f19018152918152815160209283012060008181526001938490529190912060028101549281015490549193506001600160a01b0392831692600160a01b90910467ffffffffffffffff1691166104ab5760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101c3565b60008381526001602052604090205442600160a01b90910467ffffffffffffffff1610156105115760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101c3565b60008381526001602081905260408220805491810180546001600160e01b03199384168355929092169091556002810180546001600160a01b0319908116909155600382018054909116905560040155600080546001600160a01b0319166001600160a01b03841690811790915560405163b61f303560e01b815263b61f3035906105aa9084908b908e908e908d908d906004016108df565b600060405180830381600087803b1580156105c457600080fd5b505af11580156105d8573d6000803e3d6000fd5b50505050505050505050505050565b6000818152600160205260409020546001600160a01b031661063c5760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101c3565b60008181526001602052604090205442600160a01b90910467ffffffffffffffff16106106a15760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101c3565b60008181526001602081905260408220805491810180546001600160e01b03199384168355929092169091556002810180546001600160a01b031990811690915560038201805490911690556004015560405181907fb5401e6c1763706f9bd497806965128ca8060d79146b11ac65bd8d7a9048b7e490600090a250565b60008083601f840112610730578182fd5b50813567ffffffffffffffff811115610747578182fd5b60208301915083602082850101111561075f57600080fd5b9250929050565b803567ffffffffffffffff8116811461077e57600080fd5b919050565b600080600080600080600080610100898b03121561079f578384fd5b88356107aa81610997565b975060208901356107ba81610997565b965060408901356107ca81610997565b95506107d860608a01610766565b945060808901356107e881610997565b935060a089013592506107fd60c08a01610766565b915060e089013590509295985092959890939650565b6000806000806000806080878903121561082b578182fd5b863567ffffffffffffffff80821115610842578384fd5b818901915089601f830112610855578384fd5b813581811115610863578485fd5b8a60208260051b8501011115610877578485fd5b6020830198508097505061088d60208a01610766565b955060408901359150808211156108a2578384fd5b506108af89828a0161071f565b979a9699509497949695606090950135949350505050565b6000602082840312156108d8578081fd5b5035919050565b67ffffffffffffffff878116825286166020808301919091526080604083018190528201859052600090869060a0840190835b8881101561094057833561092581610997565b6001600160a01b031683529281019291810191600101610912565b508482036060860152858252858782840137818601810193909352601f909401601f191690930101979650505050505050565b6000821982111561099257634e487b7160e01b81526011600452602481fd5b500190565b6001600160a01b03811681146109ac57600080fd5b5056fea264697066735822122049a7f98b9947744d11997f8c9be141bacb612d68017c7d194b425a692d03a7b164736f6c63430008030033",
+        "deployedBytecode": "0x60806040526004361061003f5760003560e01c80634b6286c914610044578063619b00d414610059578063ad121c4e14610079578063d6a1c7f814610142575b600080fd5b610057610052366004610783565b610162565b005b34801561006557600080fd5b50610057610074366004610813565b610404565b34801561008557600080fd5b506100ef6100943660046108c7565b6001602081905260009182526040909120805491810154600282015460038301546004909301546001600160a01b038086169567ffffffffffffffff600160a01b918290048116968684169692909204169382169291169087565b604080516001600160a01b03988916815267ffffffffffffffff978816602082015295881690860152949092166060840152841660808301529290921660a083015260c082015260e00160405180910390f35b34801561014e57600080fd5b5061005761015d3660046108c7565b6105e7565b6000818152600160205260409020546001600160a01b0316156101cc5760405162461bcd60e51b815260206004820152601460248201527f456e74727920616c72656164792065786973747300000000000000000000000060448201526064015b60405180910390fd5b60008567ffffffffffffffff16116102305760405162461bcd60e51b815260206004820152602160248201527f544c20746f74616c206d6f6e657920616d6f756e7420697320726571756972656044820152601960fa1b60648201526084016101c3565b6001600160a01b0384166102865760405162461bcd60e51b815260206004820152601c60248201527f457468657265756d20616464726573732069732072657175697265640000000060448201526064016101c3565b600083116102d65760405162461bcd60e51b815260206004820152601c60248201527f45746820746f74616c20616d6f756e742069732072657175697265640000000060448201526064016101c3565b600081815260016020819052604090912080546001600160a01b03808c166001600160a01b0319928316178355919092018054918a169190921617905561032767ffffffffffffffff831642610973565b600082815260016020818152604092839020805467ffffffffffffffff958616600160a01b9081027fffffffff0000000000000000ffffffffffffffffffffffffffffffffffffffff9283161783559382018054968c1694850296909116959095179094556002840180546001600160a01b038c81166001600160a01b031992831617909255600386018054928b16929091169190911790556004909301869055905190815282917f634761f946731c268edfbeb92252994b8c9412316195d68196a56fea6f5e04d2910160405180910390a25050505050505050565b60008160405160200161041991815260200190565b60408051808303601f19018152918152815160209283012060008181526001938490529190912060028101549281015490549193506001600160a01b0392831692600160a01b90910467ffffffffffffffff1691166104ab5760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101c3565b60008381526001602052604090205442600160a01b90910467ffffffffffffffff1610156105115760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101c3565b60008381526001602081905260408220805491810180546001600160e01b03199384168355929092169091556002810180546001600160a01b0319908116909155600382018054909116905560040155600080546001600160a01b0319166001600160a01b03841690811790915560405163b61f303560e01b815263b61f3035906105aa9084908b908e908e908d908d906004016108df565b600060405180830381600087803b1580156105c457600080fd5b505af11580156105d8573d6000803e3d6000fd5b50505050505050505050505050565b6000818152600160205260409020546001600160a01b031661063c5760405162461bcd60e51b815260206004820152600e60248201526d139bc8195b9d1c9e48199bdd5b9960921b60448201526064016101c3565b60008181526001602052604090205442600160a01b90910467ffffffffffffffff16106106a15760405162461bcd60e51b81526020600482015260136024820152722a34b6b2a9ba30b6b8103b34b7b630ba34b7b760691b60448201526064016101c3565b60008181526001602081905260408220805491810180546001600160e01b03199384168355929092169091556002810180546001600160a01b031990811690915560038201805490911690556004015560405181907fb5401e6c1763706f9bd497806965128ca8060d79146b11ac65bd8d7a9048b7e490600090a250565b60008083601f840112610730578182fd5b50813567ffffffffffffffff811115610747578182fd5b60208301915083602082850101111561075f57600080fd5b9250929050565b803567ffffffffffffffff8116811461077e57600080fd5b919050565b600080600080600080600080610100898b03121561079f578384fd5b88356107aa81610997565b975060208901356107ba81610997565b965060408901356107ca81610997565b95506107d860608a01610766565b945060808901356107e881610997565b935060a089013592506107fd60c08a01610766565b915060e089013590509295985092959890939650565b6000806000806000806080878903121561082b578182fd5b863567ffffffffffffffff80821115610842578384fd5b818901915089601f830112610855578384fd5b813581811115610863578485fd5b8a60208260051b8501011115610877578485fd5b6020830198508097505061088d60208a01610766565b955060408901359150808211156108a2578384fd5b506108af89828a0161071f565b979a9699509497949695606090950135949350505050565b6000602082840312156108d8578081fd5b5035919050565b67ffffffffffffffff878116825286166020808301919091526080604083018190528201859052600090869060a0840190835b8881101561094057833561092581610997565b6001600160a01b031683529281019291810191600101610912565b508482036060860152858252858782840137818601810193909352601f909401601f191690930101979650505050505050565b6000821982111561099257634e487b7160e01b81526011600452602481fd5b500190565b6001600160a01b03811681146109ac57600080fd5b5056fea264697066735822122049a7f98b9947744d11997f8c9be141bacb612d68017c7d194b425a692d03a7b164736f6c63430008030033",
+        "metadata": {
+            "compiler": {
+                "version": "0.8.3+commit.8d00100c"
+            },
+            "language": "Solidity",
+            "output": {
+                "abi": [
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "CommitmentExpiredEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "TLMoneyAmount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "CommitmentInitiatedEvent",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "bytes32",
+                                "name": "hash",
+                                "type": "bytes32"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "TLMoneyAmount",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "TLNetwork",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "initiatorEthAddress",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "EthAmount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "CommitmentSuccessEvent",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "CommitmentsMap",
+                        "outputs": [
+                            {
+                                "internalType": "address payable",
+                                "name": "initiator",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "endTimeStamp",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "address payable",
+                                "name": "recipient",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "TLMoneyAmount",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "TLNetwork",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "initiatorEthAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "EthAmount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address[]",
+                                "name": "_path",
+                                "type": "address[]"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "_maxFee",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "bytes",
+                                "name": "_extraData",
+                                "type": "bytes"
+                            },
+                            {
+                                "internalType": "bytes32",
+                                "name": "_proof",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "claim",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address payable",
+                                "name": "_TLSender",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address payable",
+                                "name": "_TLRecipient",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "_TLNetwork",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "_TLMoneyAmount",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "_InitiatorEthAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "_EthAmount",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint64",
+                                "name": "_lockTimeSec",
+                                "type": "uint64"
+                            },
+                            {
+                                "internalType": "bytes32",
+                                "name": "_hash",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "commit",
+                        "outputs": [],
+                        "stateMutability": "payable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "bytes32",
+                                "name": "_hash",
+                                "type": "bytes32"
+                            }
+                        ],
+                        "name": "removeCommitment",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ],
+                "devdoc": {
+                    "kind": "dev",
+                    "methods": {},
+                    "version": 1
+                },
+                "userdoc": {
+                    "kind": "user",
+                    "methods": {},
+                    "version": 1
+                }
+            },
+            "settings": {
+                "compilationTarget": {
+                    "../semi-atomic-swap/src/contracts/TLSwap.sol": "TLSwap"
+                },
+                "evmVersion": "petersburg",
+                "libraries": {},
+                "metadata": {
+                    "bytecodeHash": "ipfs"
+                },
+                "optimizer": {
+                    "enabled": true,
+                    "runs": 500
+                },
+                "remappings": []
+            },
+            "sources": {
+                "../semi-atomic-swap/src/contracts/CurrencyNetworkBasic.sol": {
+                    "keccak256": "0x8d3da22c8fa18619eecd166d2c5741f1d262eef621187a12cc86efc02d7f663e",
+                    "license": "MIT",
+                    "urls": [
+                        "bzz-raw://34c713dd6d34efa5330b546413d95ff66647bcd4607ab59938646fe823fa3e0d",
+                        "dweb:/ipfs/QmbfhFHoLewFTtnfqMrF36ssYDzDB41UFC2wT28ksNKSgt"
+                    ]
+                },
+                "../semi-atomic-swap/src/contracts/TLSwap.sol": {
+                    "keccak256": "0x74803ddf87f829045bb6ed7dbc4a3a10b1b65cd4df93d48030c21c06ed104dcc",
+                    "license": "MIT",
+                    "urls": [
+                        "bzz-raw://cdad62638121460afb94da1f21c4aaf3ecc12efb89f5379ac132bf238527e41a",
+                        "dweb:/ipfs/QmPEiNu9PXkVzSZnh1w6iFT4YLJZfs7bZNbzN2gN5fwcwP"
+                    ]
+                }
+            },
+            "version": 1
+        },
+        "userdoc": {
+            "kind": "user",
+            "methods": {},
+            "version": 1
+        }
+    }
+}
