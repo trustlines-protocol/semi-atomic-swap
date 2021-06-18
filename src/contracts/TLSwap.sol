@@ -26,7 +26,7 @@ contract TLSwap {
         uint64 _TLMoneyAmount,
         address _InitiatorEthAddress,
         uint _EthAmount,
-        uint64 _lockTimeSec, bytes32 _hash) external payable {
+        uint64 _lockTimeSec, bytes32 _hash) external {
 
         require(CommitmentsMap[_hash].initiator == address(0x0), "Entry already exists");
         require(_TLMoneyAmount > 0, "TL total money amount is required");
