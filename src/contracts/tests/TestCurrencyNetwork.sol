@@ -1,12 +1,10 @@
 pragma solidity ^0.8.3;
 
 /**
- * @title Basic functionalities of Currency Networks
- * @notice Main contract of Trustlines, encapsulates all trustlines of one currency network.
- * Implements core features of currency networks related to opening / closing trustline and transfers.
- * Also includes freezing of TL / currency networks, interests and fees.
+ * @title Test contract representing a currency network
+ * Has a mock transferFrom function that will just emit an event.
  **/
-contract CurrencyNetworkBasic {
+contract TestCurrencyNetwork {
 
     event Transfer(
         address indexed _from,

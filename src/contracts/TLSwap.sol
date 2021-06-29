@@ -1,10 +1,10 @@
 pragma solidity 0.8.3;
 
-import "./CurrencyNetworkBasic.sol";
+import "./CurrencyNetworkInterface.sol";
 
 contract TLSwap {
 
-    CurrencyNetworkBasic _currency;
+    CurrencyNetworkInterface _currency;
 
     struct Commitment {
         address payable initiator;
@@ -59,7 +59,7 @@ contract TLSwap {
 
         clean(hash);
 
-        _currency = CurrencyNetworkBasic(networkAddress);
+        _currency = CurrencyNetworkInterface(networkAddress);
         _currency.transferFrom(TlMoneyAmount, _maxFee, _path, _extraData);
     }
 
