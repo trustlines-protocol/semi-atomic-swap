@@ -15,7 +15,6 @@ contract EtherSwap {
     event SwapInitiatedEvent(bytes32 indexed hash, uint256 value);
     event SwapSuccessEvent(bytes32 indexed hash, uint256 value);
     event SwapExpiredEvent(bytes32 indexed hash);
-    event test(bytes enc);
 
     function secretLock(uint64 _lockTimeSec, bytes32 _hash, address payable _recipient) external payable {
         require(swapMap[_hash].initiator == address(0x0), "Entry already exists");
