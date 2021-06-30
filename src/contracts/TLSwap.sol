@@ -8,19 +8,19 @@ contract TLSwap {
 
     struct Commitment {
         address payable initiator;
-        uint64 endTimeStamp;
         address payable recipient;
-        uint64 TLMoneyAmount;
         address TLNetwork;
+        uint64 TLMoneyAmount;
+        uint64 endTimeStamp;
         address initiatorEthAddress;
         uint256 EthAmount;
     }
 
     mapping(bytes32 => Commitment) public CommitmentsMap; // the key is the hash
 
-    event CommitmentInitiatedEvent(bytes32 indexed hash, uint256 TLMoneyAmount);
-    event CommitmentSuccessEvent(bytes32 indexed hash, uint256 TLMoneyAmount, address TLNetwork, address initiatorEthAddress, uint EthAmount);
-    event CommitmentExpiredEvent(bytes32 indexed hash);
+    event Commit(bytes32 indexed hash, address sender, address recipient, address TLNetwork, uint256 TLMoneyAmount, uint64 expiryTime);
+    event Claim(bytes32 indexed hash, address sender, address recipient, address TLNetwork, uint256 TLMoneyAmount);
+    event ExpireCommitment(bytes32 indexed hash);
 
     function commit(address payable _TLSender, address payable _TLRecipient, address _TLNetwork,
         uint64 _TLMoneyAmount,
@@ -33,15 +33,17 @@ contract TLSwap {
         require(_InitiatorEthAddress != address(0x0), "Ethereum address is required");
         require(_EthAmount > 0, "Eth total amount is required");
 
+        uint64 expiryTime = uint64(block.timestamp + _lockTimeSec);
+
         CommitmentsMap[_hash].initiator = _TLSender;
         CommitmentsMap[_hash].recipient = _TLRecipient;
-        CommitmentsMap[_hash].endTimeStamp = uint64(block.timestamp + _lockTimeSec);
+        CommitmentsMap[_hash].endTimeStamp = expiryTime;
         CommitmentsMap[_hash].TLMoneyAmount = _TLMoneyAmount;
         CommitmentsMap[_hash].TLNetwork =_TLNetwork;
         CommitmentsMap[_hash].initiatorEthAddress = _InitiatorEthAddress;
         CommitmentsMap[_hash].EthAmount = _EthAmount;
 
-        emit CommitmentInitiatedEvent(_hash, _TLMoneyAmount);
+        emit Commit(_hash, _TLSender, _TLRecipient, _TLNetwork, _TLMoneyAmount, expiryTime);
     }
 
 
@@ -57,10 +59,12 @@ contract TLSwap {
         require(CommitmentsMap[hash].initiator != address(0x0), "No entry found");
         require(CommitmentsMap[hash].endTimeStamp >= block.timestamp, "TimeStamp violation");
 
-        clean(hash);
+        delete CommitmentsMap[hash];
 
         _currency = CurrencyNetworkInterface(networkAddress);
         _currency.transferFrom(TlMoneyAmount, _maxFee, _path, _extraData);
+
+        emit Claim(hash, _path[0], _path[_path.length - 1], networkAddress, TlMoneyAmount);
     }
 
     /*
@@ -72,23 +76,9 @@ contract TLSwap {
         require(CommitmentsMap[_hash].initiator != address(0x0), "No entry found");
         require(CommitmentsMap[_hash].endTimeStamp < block.timestamp, "TimeStamp violation");
 
-        clean(_hash);
-
-        emit CommitmentExpiredEvent(_hash);
-    }
-
-    function clean(bytes32 _hash) private {
-        Commitment storage commitment = CommitmentsMap[_hash];
-
-        delete commitment.initiator;
-        delete commitment.recipient;
-        delete commitment.endTimeStamp;
-        delete commitment.TLMoneyAmount;
-        delete commitment.TLNetwork;
-        delete commitment.initiatorEthAddress;
-        delete commitment.EthAmount;
-
         delete CommitmentsMap[_hash];
+
+        emit ExpireCommitment(_hash);
     }
 }
 
