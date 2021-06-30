@@ -21,6 +21,37 @@ def get_single_event_of_contract(contract, event_name, from_block=0):
     return events[0]
 
 
+@pytest.fixture()
+def sender(accounts):
+    return accounts[1]
+
+
+@pytest.fixture()
+def recipient(accounts):
+    return accounts[2]
+
+
+@pytest.fixture()
+def swap_tl_amount():
+    return 100
+
+
+@pytest.fixture()
+def commit_swap(
+    tl_swap_contract, tl_currency_network_contract, sender, recipient, swap_tl_amount
+):
+    tl_swap_contract.functions.commit(
+        sender,
+        recipient,
+        tl_currency_network_contract.address,
+        swap_tl_amount,
+        "0xBf6CA0E4b2B5C788dB424383A95fd019d2EB717f",
+        1,
+        WEEK_SECONDS,
+        HASHED_SECRET,
+    ).transact({"from": sender})
+
+
 def test_tl_swap_emit_initiated_event(
     tl_swap_contract, tl_currency_network_contract, accounts, web3
 ):
@@ -200,6 +231,17 @@ def test_tl_swap_remove_commitment(tl_swap_contract):
     )["args"]
 
     assert expired_event.hash == HASHED_SECRET
+
+
+@pytest.mark.usefixtures("commit_swap")
+def test_claim_removed_commitment(tl_swap_contract, chain, sender, recipient, web3):
+    expiry_time = web3.eth.getBlock("latest").timestamp + WEEK_SECONDS + 1
+    chain.time_travel(expiry_time)
+    tl_swap_contract.functions.removeCommitment(HASHED_SECRET).transact()
+    with pytest.raises(exceptions.TransactionFailed):
+        tl_swap_contract.functions.claim(
+            [sender, recipient], MAX_FEE, b"", SECRET,
+        ).transact()
 
 
 def test_commit_for_someone_else(
