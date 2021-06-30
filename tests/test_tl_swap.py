@@ -21,24 +21,37 @@ def get_single_event_of_contract(contract, event_name, from_block=0):
     return events[0]
 
 
-def test_tl_swap_emit_initiated_event(tl_swap_contract):
+def test_tl_swap_emit_initiated_event(
+    tl_swap_contract, tl_currency_network_contract, accounts, web3
+):
+    sender = accounts[1]
+    recipient = accounts[2]
+    network = tl_currency_network_contract.address
+    amount = 100
     tl_swap_contract.functions.commit(
-        "0x9f9f3792287e87d84590E3fe3fD0B34B6E60531e",
-        "0x94934A417e05091319048701bd4cF61DC48962ac",
-        "0xa6C7310A1fc7A806Fd7c20B4b030501fCe2AC977",
-        100,
+        sender,
+        recipient,
+        network,
+        amount,
         "0xBf6CA0E4b2B5C788dB424383A95fd019d2EB717f",
         1,
         WEEK_SECONDS,
         HASHED_SECRET,
-    ).transact()
+    ).transact({"from": sender})
 
     commit_initiated_event = get_single_event_of_contract(
-        tl_swap_contract, "CommitmentInitiatedEvent", 0,
+        tl_swap_contract, "Commit", 0,
     )["args"]
 
     assert commit_initiated_event.hash == HASHED_SECRET
-    assert commit_initiated_event.TLMoneyAmount == 100
+    assert commit_initiated_event.sender == sender
+    assert commit_initiated_event.recipient == recipient
+    assert commit_initiated_event.TLNetwork == network
+    assert commit_initiated_event.TLMoneyAmount == amount
+    assert (
+        commit_initiated_event.expiryTime
+        == WEEK_SECONDS + web3.eth.getBlock("latest").timestamp
+    )
 
 
 def test_tl_swap_commit_entry_alredy_exists(tl_swap_contract):
@@ -132,7 +145,7 @@ def test_tl_swap_claim_tl_money(tl_swap_contract, tl_currency_network_contract):
     ).transact()
 
     commit_initiated_event = get_single_event_of_contract(
-        tl_swap_contract, "CommitmentInitiatedEvent", 0,
+        tl_swap_contract, "Commit", 0,
     )["args"]
 
     assert commit_initiated_event.hash == HASHED_SECRET
@@ -174,7 +187,7 @@ def test_tl_swap_remove_commitment(tl_swap_contract):
     ).transact()
 
     commit_initiated_event = get_single_event_of_contract(
-        tl_swap_contract, "CommitmentInitiatedEvent", 0,
+        tl_swap_contract, "Commit", 0,
     )["args"]
 
     assert commit_initiated_event.hash == HASHED_SECRET
@@ -183,7 +196,7 @@ def test_tl_swap_remove_commitment(tl_swap_contract):
     tl_swap_contract.functions.removeCommitment(HASHED_SECRET).transact()
 
     expired_event = get_single_event_of_contract(
-        tl_swap_contract, "CommitmentExpiredEvent", 0,
+        tl_swap_contract, "ExpireCommitment", 0,
     )["args"]
 
     assert expired_event.hash == HASHED_SECRET
