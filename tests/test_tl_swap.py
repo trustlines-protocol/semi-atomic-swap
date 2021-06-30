@@ -200,3 +200,24 @@ def test_tl_swap_remove_commitment(tl_swap_contract):
     )["args"]
 
     assert expired_event.hash == HASHED_SECRET
+
+
+def test_commit_for_someone_else(
+    accounts, tl_currency_network_contract, tl_swap_contract
+):
+    committer = accounts[0]
+    sender = accounts[1]
+    recipient = accounts[2]
+    network = tl_currency_network_contract.address
+    amount = 100
+    with pytest.raises(exceptions.TransactionFailed):
+        tl_swap_contract.functions.commit(
+            sender,
+            recipient,
+            network,
+            amount,
+            "0xBf6CA0E4b2B5C788dB424383A95fd019d2EB717f",
+            1,
+            WEEK_SECONDS,
+            HASHED_SECRET,
+        ).transact({"from": committer})
