@@ -221,3 +221,29 @@ def test_commit_for_someone_else(
             WEEK_SECONDS,
             HASHED_SECRET,
         ).transact({"from": committer})
+
+
+def test_claim_your_own_commitment(
+    accounts, tl_currency_network_contract, tl_swap_contract
+):
+    sender = accounts[1]
+    recipient = accounts[2]
+    network = tl_currency_network_contract.address
+    amount = 100
+
+    tl_swap_contract.functions.commit(
+        sender,
+        recipient,
+        network,
+        amount,
+        "0xBf6CA0E4b2B5C788dB424383A95fd019d2EB717f",
+        1,
+        WEEK_SECONDS,
+        HASHED_SECRET,
+    ).transact({"from": sender})
+
+    with pytest.raises(exceptions.TransactionFailed):
+        sender_friend = accounts[3]
+        path = [sender, sender_friend, sender]
+
+        tl_swap_contract.functions.claim(path, 0, b"", SECRET)
